@@ -27,6 +27,8 @@ ADMIXTURE analysis identified cryptic population structure across three compleme
 
 Cross-validation error minimisation determined optimal K for each dataset.
 
+*The figures below focus on the K=13 L. infantum only analysis, as this dataset directly addresses MSL variation within the species of interest. Complete results for all three datasets are available in the `figures/admixture/` directory.*
+
 #### Cross-Validation Error Justification (K=13)
 
 ![Cross-Validation Error K=13](readme_images/linfantum_only_cv_error_plot_k1_to_k20_for_k13_only.jpeg)
