@@ -92,15 +92,15 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 
 ## Methods Summary
 
-**Phylogenetics:**
-- IQ-TREE2 maximum likelihood with 1000 ultrafast bootstrap replicates.
-- GTR+F+ASC model (ascertainment bias correction for SNP data).
-- ggtree (R) for visualisation with geographic/ploidy annotation.
-
 **Population Structure:**
 - ADMIXTURE v1.3 with K=1-20 tested.
 - Cross-validation error minimisation for optimal K selection.
 - High-confidence assignments: ≥90% ancestry threshold.
+
+**Phylogenetics:**
+- IQ-TREE2 maximum likelihood with 1000 ultrafast bootstrap replicates.
+- GTR+F+ASC model (ascertainment bias correction for SNP data).
+- ggtree (R) for visualisation with geographic/ploidy annotation.
 
 **Data:**
 - 671 *L. infantum* isolates, global sampling.
