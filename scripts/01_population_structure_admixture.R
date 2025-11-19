@@ -1137,14 +1137,3 @@ ggsave(file.path(FIGURES_DIR, "Americas_Only",
 
 
 
-# SCRIPT COMPLETE --------------------------------------------------------------
-
-cat("\n")
-cat("====================================================================\n")
-cat("ADMIXTURE POPULATION STRUCTURE ANALYSIS COMPLETE\n")
-cat("====================================================================\n")
-cat("Output directories:\n")
-cat("  Figures:", FIGURES_DIR, "\n")
-cat("  Analysis outputs:", RESULTS_DIR, "\n")
-cat("====================================================================\n\n")
-
