@@ -1,11 +1,37 @@
+
+
 # ADMIXTURE POPULATION STRUCTURE ANALYSIS
-# L.infantum Genomics Study
+# Leishmania infantum Miltefosine Resistance Study
 
-# This script analyses ADMIXTURE results for three datasets:
-# 1. All L.infantum + L.donovani outgroup (K=12)
-# 2. All L.infantum only (K=8 and K=13)
-# 3. Americas-only L.infantum (K=13)
 
+# Author: Mathew Johansson
+# Institution: University of York, Jeffares Lab
+# Date: November 2025
+
+# Description:
+# This script processes and visualises ADMIXTURE results for three complementary
+# datasets to investigate population structure in L. infantum:
+
+#   1. All L. infantum + L. donovani outgroup (K=12)
+#      Purpose: Establish species-level separation and major geographic structure
+
+#   2. All L. infantum only (K=13)
+#      Purpose: Fine-scale cryptic population structure without outgroup influence
+
+#   3. Americas-only L. infantum (K=13)
+#      Purpose: High-resolution structure in New World where MSL deletions predominate
+
+# Key Outputs:
+#   - High-confidence population assignments (≥90% ancestry threshold)
+#   - Cross-validation error plots justifying optimal K selection
+#   - Stacked ancestry barplots showing population composition
+#   - Population summary tables with geographic distribution
+
+# Requirements:
+#   - ADMIXTURE output files (.Q matrices, .CV files)
+#   - Sample metadata with geographic and MSL coverage information
+
+ 
 
 
 
@@ -26,28 +52,26 @@ library(forcats)
 # 1.2. Define Project Directories ----------------------------------------------
 
 # Set base directory - ONLY CHANGE THIS LINE to run on different machines
-BASE_DIR <- "/home/johansson/Documents/Bioinformatics/Leishmania/Leishmania Manuscript"
+BASE_DIR <- "~/Documents/Bioinformatics/Leishmania/Leishmania Manuscript/Leishmania-MSL-Population-Genomics"
 
 # Define subdirectories
-METADATA_DIR <- file.path(BASE_DIR, "Metadata")
-DATA_DIR <- file.path(BASE_DIR, "Data/population_structure")
-ADMIXTURE_DIR <- file.path(BASE_DIR, "ADMIXTURE")
-SCRIPTS_DIR <- file.path(BASE_DIR, "Scripts/ADMIXTURE")
-FIGURES_DIR <- file.path(BASE_DIR, "Figures/ADMIXTURE")
-OUTPUTS_DIR <- file.path(ADMIXTURE_DIR, "Analysis Outputs")
+METADATA_DIR <- file.path(BASE_DIR, "data/metadata")
+DATA_DIR <- file.path(BASE_DIR, "data/population_structure")
+FIGURES_DIR <- file.path(BASE_DIR, "figures/admixture")
+RESULTS_DIR <- file.path(BASE_DIR, "results/population_structure")
 
 # Create output directories if they don't exist
-dir.create(file.path(FIGURES_DIR, "All Linfantum With Outgroup"), 
+dir.create(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup"), 
            recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(FIGURES_DIR, "Linfantum Only"), 
+dir.create(file.path(FIGURES_DIR, "Linfantum_Only"), 
            recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(FIGURES_DIR, "Americas Only"), 
+dir.create(file.path(FIGURES_DIR, "Americas_Only"), 
            recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(OUTPUTS_DIR, "High Confidence Samples"), 
+dir.create(file.path(RESULTS_DIR, "High_Confidence_Samples"), 
            recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(OUTPUTS_DIR, "Defined Populations"), 
+dir.create(file.path(RESULTS_DIR, "Population_Assignments"), 
            recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(OUTPUTS_DIR, "Population Labels"), 
+dir.create(file.path(RESULTS_DIR, "Population_Labels"), 
            recursive = TRUE, showWarnings = FALSE)
 
 
@@ -68,7 +92,7 @@ master_palette_ordered <- setNames(
 # Alphabetically sorted version for legends
 master_palette_alpha <- master_palette_ordered[sort(names(master_palette_ordered))]
 
-# Generic master palette (using same colors)
+# Generic master palette (using same colours)
 master_palette <- master_palette_ordered
 
 # Population palette for L. infantum only (K=13) 
@@ -89,7 +113,7 @@ population_palette_base <- setNames(
     "Central & East Asia with Middle East Mix (Uzbekistan, China, Israel)")
 )
 
-# Americas palette (K=13) - bright colors to match other datasets
+# Americas palette (K=13) - bright colours to match other datasets
 americas_palette_base <- c(
   "#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00", "#FFFF33",
   "#A65628", "#F781BF", "#66C2A5", "#FC8D62", "#8DA0CB", "#B15928", "#FDBF6F"
@@ -149,7 +173,7 @@ all_linfantum_plus_outgroup_pop_labels <- tibble(
 )
 
 
-# Summarize per population
+# Summarise per population
 table_data_clean_numeric_all_samples <- high_conf_all %>%
   group_by(population) %>%
   summarise(
@@ -167,7 +191,7 @@ table_data_clean_numeric_all_samples
 
 # Save population table with cols: population, population_label (geo region), N_Samples, Countries_Represented, Host_Species, Notes
 write_tsv(table_data_clean_numeric_all_samples,
-          file.path(OUTPUTS_DIR, "all_linfantum_plus_outgroup_population_summary_k12.tsv")
+          file.path(RESULTS_DIR, "all_linfantum_plus_outgroup_population_summary_k12.tsv")
 )
 
 
@@ -180,7 +204,7 @@ high_conf_all <- high_conf_all %>%
 
 # Save high-confidence samples
 write_tsv(high_conf_all, 
-          file.path(OUTPUTS_DIR, "High Confidence Samples", 
+          file.path(RESULTS_DIR, "High_Confidence_Samples", 
                     "all_linfantum_plus_outgroup_high_confidence_samples_k12.tsv"))
 
 
@@ -220,12 +244,12 @@ ggplot(high_conf_all, aes(x = population_label, fill = population_label)) +
 
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup", 
+ggsave(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup", 
                  "all_linfantum_with_outgroup_population_assignments_k12.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup", 
+ggsave(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup", 
                  "all_linfantum_with_outgroup_population_assignments_k12.pdf"), 
        width = 10, height = 6)
 
@@ -233,7 +257,7 @@ ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup",
 # Save population labels lookup
 write_tsv(
   all_linfantum_plus_outgroup_pop_labels, 
-  file.path(OUTPUTS_DIR, "Population Labels", 
+  file.path(RESULTS_DIR, "Population_Labels", 
             "all_linfantum_plus_outgroup_population_labels_lookup.tsv")
 )
 
@@ -288,12 +312,12 @@ ggplot(cv_data_linfantum_with_outgroup,
            hjust = 0)
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup", 
+ggsave(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup", 
                  "linfantum_samples_with_outgroup_cv_error_plot_k1_to_k20.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup", 
+ggsave(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup", 
                  "linfantum_samples_with_outgroup_cv_error_plot_k1_to_k20.pdf"), 
        width = 10, height = 6)
 
@@ -373,12 +397,12 @@ ggplot(admix_long, aes(x = sample, y = population_proportion, fill = population_
 
 
 # Save the barplot as a jpeg 
-ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup", 
+ggsave(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup", 
                  "all_linfantum_with_outgroup_ancestry_barplot.jpeg"), 
        width = 10, height = 6)
 
 # Save the barplot as a pdf 
-ggsave(file.path(FIGURES_DIR, "All Linfantum With Outgroup", 
+ggsave(file.path(FIGURES_DIR, "All_Linfantum_With_Outgroup", 
                  "all_linfantum_with_outgroup_ancestry_barplot.pdf"), 
        width = 10, height = 6)
 
@@ -459,7 +483,7 @@ high_conf_linfantum_k13_summary
 
 # Save high-confidence samples to a new file
 write_tsv(high_conf_linfantum_k13, 
-          file.path(OUTPUTS_DIR, "High Confidence Samples", 
+          file.path(RESULTS_DIR, "High_Confidence_Samples", 
                     "linfantum_only_high_confidence_samples_k13.tsv"))
 
 
@@ -511,7 +535,7 @@ table_data_clean_numeric_all_linfantum_k13
 
 # Save population table with cols: population, population_label (geo region), N_Samples, Countries_Represented, Host_Species, Notes
 write_tsv(table_data_clean_numeric_all_linfantum_k13,
-          file.path(OUTPUTS_DIR, "linfantum_only_population_summary_k13.tsv")
+          file.path(RESULTS_DIR, "linfantum_only_population_summary_k13.tsv")
 )
 
 
@@ -543,12 +567,12 @@ ggplot(high_conf_linfantum_k13, aes(x = population_label, fill = population_labe
 
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "Linfantum Only", 
+ggsave(file.path(FIGURES_DIR, "Linfantum_Only", 
                  "linfantum_only_population_assignments_k13.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "Linfantum Only", 
+ggsave(file.path(FIGURES_DIR, "Linfantum_Only", 
                  "linfantum_only_population_assignments_k13.pdf"), 
        width = 10, height = 6)
 
@@ -591,12 +615,12 @@ ggplot(cv_data_linfantum_only,
            hjust = 0)
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "Linfantum Only", 
+ggsave(file.path(FIGURES_DIR, "Linfantum_Only", 
                  "linfantum_only_cv_error_plot_k1_to_k20_for_k13_only.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "Linfantum Only", 
+ggsave(file.path(FIGURES_DIR, "Linfantum_Only", 
                  "linfantum_only_cv_error_plot_k1_to_k20_for_k13_only.pdf"), 
        width = 10, height = 6)
 
@@ -645,7 +669,7 @@ high_conf_linfantum_k13 %>%
 # Save the lookup table for future reference
 write_tsv(
   linfantum_only_pop_labels, 
-  file.path(OUTPUTS_DIR, "Population Labels", 
+  file.path(RESULTS_DIR, "Population_Labels", 
             "linfantum_only_population_labels_lookup.tsv")
 )
 
@@ -663,7 +687,7 @@ final_population_assignments_linfantum_only
 # Save the final assignments
 write_tsv(
   final_population_assignments_linfantum_only, 
-  file.path(OUTPUTS_DIR, "Defined Populations", 
+  file.path(RESULTS_DIR, "Defined_Populations", 
             "final_population_assignments_linfantum_only.tsv")
 )
 
@@ -754,12 +778,12 @@ ggplot(Qmat_k13_long,
 
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "Linfantum Only", 
+ggsave(file.path(FIGURES_DIR, "Linfantum_Only", 
                  "linfantum_only_stacked_ancestry_barplot_k13.jpeg"), 
        width = 15, height = 8)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "Linfantum Only", 
+ggsave(file.path(FIGURES_DIR, "Linfantum_Only", 
                  "linfantum_only_stacked_ancestry_barplot_k13.pdf"), 
        width = 15, height = 8)
 
@@ -846,7 +870,7 @@ table_data_clean_numeric_americas_only <- high_conf_americas_k13_clean %>%
 # Save population table
 write_tsv(
   table_data_clean_numeric_americas_only,
-  file.path(OUTPUTS_DIR, "americas_only_population_summary_k13.tsv")
+  file.path(RESULTS_DIR, "americas_only_population_summary_k13.tsv")
 )
 
 # Force population labels into alphabetical order
@@ -877,12 +901,12 @@ ggplot(high_conf_americas_k13_clean, aes(x = population_label, fill = population
   )
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "Americas Only", 
+ggsave(file.path(FIGURES_DIR, "Americas_Only", 
                  "americas_only_linfantum_population_assignments_k13.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "Americas Only", 
+ggsave(file.path(FIGURES_DIR, "Americas_Only", 
                  "americas_only_linfantum_population_assignments_k13.pdf"), 
        width = 10, height = 6)
 
@@ -933,12 +957,12 @@ ggplot(cv_data_americas_only,
            hjust = 0)
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "Americas Only", 
+ggsave(file.path(FIGURES_DIR, "Americas_Only", 
                  "americas_only_cv_error_plot_k1_to_k20.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "Americas Only", 
+ggsave(file.path(FIGURES_DIR, "Americas_Only", 
                  "americas_only_cv_error_plot_k1_to_k20.pdf"), 
        width = 10, height = 6)
 
@@ -973,7 +997,7 @@ high_conf_americas_k13 <- high_conf_americas_k13 %>%
     by = c("sample" = "sra_run_accession")
   )
 
-# Now summarize by population and source_country
+# Now summarise by population and source_country
 high_conf_americas_k13 %>%
   group_by(population, source_country) %>%
   summarise(num_samples = n(), .groups = "drop") %>%
@@ -983,7 +1007,7 @@ high_conf_americas_k13 %>%
 # Save the lookup table for future reference
 write_tsv(
   americas_only_pop_labels, 
-  file.path(OUTPUTS_DIR, "Population Labels", 
+  file.path(RESULTS_DIR, "Population_Labels", 
             "americas_only_population_labels_lookup.tsv")
 )
 
@@ -1000,7 +1024,7 @@ final_population_assignments_americas_only
 
 # Save the final assignments
 write_tsv(final_population_assignments_americas_only, 
-          file.path(OUTPUTS_DIR, "Defined Populations", 
+          file.path(RESULTS_DIR, "Defined_Populations", 
                     "final_population_assignments_americas_only.tsv")
 )
 
@@ -1101,12 +1125,12 @@ ancestry_plot_americas <- ggplot(admix_long_americas,
 print(ancestry_plot_americas)
 
 # Save the plot as a jpeg
-ggsave(file.path(FIGURES_DIR, "Americas Only", 
+ggsave(file.path(FIGURES_DIR, "Americas_Only", 
                  "americas_only_stacked_ancestry_barplot_k13.jpeg"), 
        width = 10, height = 6)
 
 # Save the plot as a pdf
-ggsave(file.path(FIGURES_DIR, "Americas Only", 
+ggsave(file.path(FIGURES_DIR, "Americas_Only", 
                  "americas_only_stacked_ancestry_barplot_k13.pdf"), 
        width = 10, height = 6)
 
@@ -1121,6 +1145,6 @@ cat("ADMIXTURE POPULATION STRUCTURE ANALYSIS COMPLETE\n")
 cat("====================================================================\n")
 cat("Output directories:\n")
 cat("  Figures:", FIGURES_DIR, "\n")
-cat("  Analysis outputs:", OUTPUTS_DIR, "\n")
+cat("  Analysis outputs:", RESULTS_DIR, "\n")
 cat("====================================================================\n\n")
 
