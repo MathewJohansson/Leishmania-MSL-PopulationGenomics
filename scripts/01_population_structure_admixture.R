@@ -1137,6 +1137,9 @@ ggsave(file.path(FIGURES_DIR, "Americas_Only",
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
