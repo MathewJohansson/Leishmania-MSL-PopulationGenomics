@@ -108,7 +108,7 @@ Genomic data: 671 *L. infantum* isolates from global sampling (Jeffares lab, Uni
 **Mathew Johansson**  
 MSc Bioinformatics, University of York  
 Voluntary Research Associate, Jeffares Lab  
-GitHub: [@MathewJohansson](https://github.com/MathewJohansson)
+[GitHub](https://github.com/MathewJohansson) | [LinkedIn](https://www.linkedin.com/in/mathew-johansson/))
 
 ## Acknowledgements
 
