@@ -128,28 +128,27 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 ---
 
 ## Repository Structure
-
 ```
 ├── data/
-│   ├── metadata/              # Sample information, population assignments
-│   ├── population_structure/  # ADMIXTURE input files (.Q files)
-│   └── phylogenetic/          # Tree files (.treefile, .contree)
+│   ├── metadata/              # Sample information, MSL coverage data
+│   ├── population_structure/  # ADMIXTURE Q-matrices and CV results
+│   └── phylogenetic/          # IQ-TREE output files (.treefile)
 ├── scripts/
 │   ├── 01_population_structure_admixture.R
-│   ├── 02_phylogenetic_whole_genome.R
-│   ├── 03_phylogenetic_100kb_windows.R
-│   └── 04_phylogenetic_20kb_windows.R
+│   ├── Whole_Genome_Linfantum_With_Outgroup_Phylogenetics.R
+│   ├── Whole_Genome_Linfantum_Only_Phylogenetics.R
+│   ├── Whole_Genome_Americas_Only_Phylogenetics.R
+│   ├── 100kb_Window_Linfantum_Only_Phylogenetics.R
+│   ├── 100kb_Window_Americas_Only_Phylogenetics.R
+│   ├── 20kb_Window_Linfantum_Only_Phylogenetics.R
+│   └── 20kb_Window_Americas_Only_Phylogenetics.R
 ├── results/
-│   ├── population_structure/  # Population assignments, summaries
-│   ├── phylogenies/           # Tree files
+│   ├── population_structure/  # Population assignments and summaries
 │   └── tables/                # Summary statistics
 ├── figures/
-│   ├── admixture/             # Population structure plots
-│   └── phylogenetics/         # Annotated phylogenetic trees
-├── readme_images/             # Figures for README display
-└── docs/
-    ├── methods.md             # Detailed methodology
-    └── data_sources.md        # Data provenance
+│   ├── admixture/             # ADMIXTURE plots (all datasets)
+│   └── phylogenetics/         # Phylogenetic tree figures (all scales)
+└── readme_images/             # Optimized figures for README display
 ```
 
 ---
