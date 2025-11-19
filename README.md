@@ -42,8 +42,8 @@ Phylogenies stratified by ploidy level (diploid vs tetraploid strains).
 ## Clinical Relevance
 
 MSL deletions confer resistance to **miltefosine**, the only oral treatment for leishmaniasis. Understanding whether resistant strains spread via:
-- **Selection** (faster than expected, requires intervention).
-- **Drift** (random spread, reflects demographic history).
+- **Selection:** Faster than expected, requires intervention.
+- **Drift:** Random spread, reflects demographic history.
 
 ...has direct implications for treatment policy and surveillance strategies.
 
@@ -110,14 +110,14 @@ MSc Bioinformatics, University of York
 Voluntary Research Associate, Jeffares Lab  
 GitHub: [@MathewJohansson](https://github.com/MathewJohansson)
 
-## Acknowledgments
+## Acknowledgements
 
 - Dr. Daniel Jeffares (University of York) - Supervision, data generation.
 - Zeynep Sakaoglu - Geographical and HWE analyses collaboration.
 
-## License
+## Licence
 
-Code: MIT License (upon manuscript publication).
+Code: MIT Licence (upon manuscript publication).  
 Data: Available upon reasonable request pending publication.
 
 ---
