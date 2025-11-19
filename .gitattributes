@@ -1,0 +1,10 @@
+# Override GitHub Linguist language detection
+# Mark .Q files as data files (ADMIXTURE output), not HiveQL code
+*.Q linguist-language=Text
+
+# Mark R scripts as detectable
+*.R linguist-detectable=true
+
+# Ignore data files from language statistics
+*.tsv linguist-generated=true
+*.txt linguist-generated=true
