@@ -1,8 +1,5 @@
 # Population Genomics of Miltefosine Resistance in *Leishmania infantum*
 
-## Project Status
-🚧 **Active Development** - Living research project demonstrating ongoing bioinformatics capabilities
-
 ## Overview
 
 *Leishmania infantum* causes visceral leishmaniasis, affecting thousands globally. This project investigates the evolutionary dynamics of miltefosine resistance through population genomic analysis of the Miltefosine Sensitivity Locus (MSL) on chromosome 31.
