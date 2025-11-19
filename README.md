@@ -61,21 +61,21 @@ Phylogenies stratified by ploidy level (diploid vs tetraploid strains) and annot
 
 #### Whole-Genome Phylogeny (Neutral Baseline)
 
-![Whole-Genome Phylogeny](readme_images/whole_genome_phylogeny.jpeg)
+![Whole-Genome Phylogeny](readme_images/whole_genome_phylogeny_circular.jpeg)
 
-*Figure 4: Maximum likelihood phylogenetic tree based on whole-genome SNPs (L. infantum only, n=463 samples). Tips are coloured by geographic region and annotated with host species (circles = human, triangles = dog) and MSL copy number (size indicates ploidy: small = deletion/diploid, large = tetraploid). Clear Old World/New World split evident with strong bootstrap support.*
+*Figure 4: Circular maximum likelihood phylogenetic tree based on whole-genome SNPs (L. infantum only, n=463 samples). Tips are coloured by geographic region and annotated with host species (circles = human, triangles = dog) and MSL copy number (symbol size indicates ploidy). Clear Old World/New World split evident with strong bootstrap support.*
 
 #### 100kb Window Around MSL (Regional Selection Signal)
 
-![100kb Window Phylogeny](readme_images/100kb_window_phylogeny.jpeg)
+![100kb Window Phylogeny](readme_images/100kb_window_phylogeny_circular.jpeg)
 
-*Figure 5: Phylogenetic tree based on 100kb genomic window surrounding the MSL locus on chromosome 31. Comparison with whole-genome tree reveals regional discordance in New World lineages, suggesting localized selection pressure on the MSL region in American populations where miltefosine resistance is prevalent.*
+*Figure 5: Phylogenetic tree based on 100kb genomic window surrounding the MSL locus on chromosome 31. Comparison with whole-genome tree reveals topological differences in New World lineages, suggesting localized selection pressure on the MSL region in American populations where miltefosine resistance is prevalent.*
 
 #### 20kb Window Around MSL (Fine-Scale Evolution)
 
-![20kb Window Phylogeny](readme_images/20kb_window_phylogeny.jpeg)
+![20kb Window Phylogeny](readme_images/20kb_window_phylogeny_circular.jpeg)
 
-*Figure 6: High-resolution phylogeny from 20kb window directly flanking the MSL genes. Note the clustering of samples with MSL deletions (small symbols) and diploid coverage, predominantly in Brazilian clades. Fine-scale phylogenetic structure differs from genome-wide patterns, providing evidence for selection acting specifically on the MSL locus.*
+*Figure 6: High-resolution phylogeny from 20kb window directly flanking the MSL genes. Clustering patterns differ from genome-wide phylogeny, with MSL deletions (small symbols indicating low copy number) concentrated in specific Brazilian clades, providing evidence for selection acting on the MSL locus.*
 
 ---
 
