@@ -9,7 +9,7 @@
 ## Key Findings (Preliminary)
 
 - Clear Old World/New World phylogenetic split.
-- 12-13 distinct populations identified via ADMIXTURE.
+- 13 distinct populations identified within *L. infantum* via ADMIXTURE.
 - MSL deletions predominantly in Brazilian populations.
 - Ploidy variation (diploid vs tetraploid) correlates with geography.
 
@@ -27,23 +27,23 @@ ADMIXTURE analysis identified cryptic population structure across three compleme
 
 Cross-validation error minimisation determined optimal K for each dataset.
 
-#### Population Assignments (K=12, All Samples + Outgroup)
+#### Cross-Validation Error Justification (K=13)
 
-![ADMIXTURE K=12 Population Assignments](readme_images/all_linfantum_with_outgroup_population_assignments_k12.jpeg)
+![Cross-Validation Error K=13](readme_images/linfantum_only_cv_error_plot_k1_to_k20_for_k13_only.jpeg)
 
-*Figure 1: ADMIXTURE-inferred population assignments (K=12) showing 12 distinct populations including East African L. donovani outgroup (purple). Brazilian populations dominate the dataset, with clear geographic structure evident.*
+*Figure 1: Cross-validation error minimisation confirms K=13 as optimal for L. infantum population structure. The lowest CV error at K=13 indicates this number of populations best explains the genetic structure within the species where MSL variation occurs.*
 
-#### Cross-Validation Error Justification
+#### Population Assignments (K=13, L. infantum Only)
 
-![Cross-Validation Error K=12](readme_images/linfantum_samples_with_outgroup_cv_error_plot_k1_to_k20.jpeg)
+![ADMIXTURE K=13 Population Assignments](readme_images/linfantum_only_population_assignments_k13.jpeg)
 
-*Figure 2: Cross-validation error minimisation confirms K=12 as optimal for the All Samples + Outgroup dataset. The lowest CV error at K=12 indicates this number of populations best explains the genetic structure.*
+*Figure 2: ADMIXTURE-inferred population assignments (K=13) showing 13 distinct populations within L. infantum. Brazilian populations dominate the dataset, with clear geographic and genetic structure. This fine-scale resolution reveals cryptic subdivisions relevant to MSL resistance patterns.*
 
-#### Fine-Scale Population Structure (K=13, L. infantum Only)
+#### Ancestry Proportions (K=13)
 
-![ADMIXTURE K=13 L. infantum Only](readme_images/linfantum_only_population_assignments_k13.jpeg)
+![ADMIXTURE K=13 Ancestry Barplot](readme_images/linfantum_only_stacked_ancestry_barplot_k13.jpeg)
 
-*Figure 3: High-resolution population structure within L. infantum (K=13) reveals cryptic subdivisions not apparent in species-level analysis. Note the increased resolution of Brazilian population clusters.*
+*Figure 3: Stacked ancestry barplot showing admixture proportions for each sample (K=13). Samples are ordered by dominant population assignment. Bar heights represent the proportion of ancestry from each of the 13 populations, revealing admixture patterns and population boundaries.*
 
 ---
 
@@ -189,6 +189,16 @@ GitHub: [@MathewJohansson](https://github.com/MathewJohansson)
 
 Code: MIT Licence (upon manuscript publication).  
 Data: Available upon reasonable request pending publication.
+
+---
+
+## Key References
+
+**ADMIXTURE:**  
+Alexander, D.H., Novembre, J. and Lange, K. (2009). Fast model-based estimation of ancestry in unrelated individuals. *Genome Research*, 19(9), 1655-1664.
+
+**IQ-TREE:**  
+Nguyen, L.T., Schmidt, H.A., von Haeseler, A. and Minh, B.Q. (2015). IQ-TREE: a fast and effective stochastic algorithm for estimating maximum-likelihood phylogenies. *Molecular Biology and Evolution*, 32(1), 268-274.
 
 ---
 
