@@ -1,0 +1,31 @@
+# Large genomic data files - DO NOT UPLOAD
+*.vcf
+*.vcf.gz
+*.bam
+*.fasta
+*.fa
+*.fastq
+*.fastq.gz
+*.fasta.gz
+*.phy
+*.nexus
+*.fasta.bak
+
+# R environment files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Temporary and system files
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# BUT keep these small files
+!*.treefile
+!*.tsv
+!*.csv
+!*.contree
