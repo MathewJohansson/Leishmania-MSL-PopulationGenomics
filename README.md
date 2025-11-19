@@ -17,7 +17,7 @@
 
 ## Analytical Approach
 
-### 1. Hierarchical Population Structure (ADMIXTURE) ✅
+### 1. Hierarchical Population Structure (ADMIXTURE)
 
 ADMIXTURE analysis identified cryptic population structure across three complementary datasets:
 
@@ -47,7 +47,7 @@ Cross-validation error minimisation determined optimal K for each dataset.
 
 ---
 
-### 2. Multi-Scale Phylogenetic Analysis ✅
+### 2. Multi-Scale Phylogenetic Analysis
 
 Comparing phylogenetic signal at three scales to detect selection on the MSL region:
 
