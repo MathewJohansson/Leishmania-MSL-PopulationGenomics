@@ -121,7 +121,7 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 - ggtree (R) for visualisation with geographic/ploidy annotation.
 
 **Data:**
-- 671 *L. infantum* isolates, global sampling.
+- 465 *L. infantum* isolates, global sampling.
 - Whole-genome sequencing data (VCF format).
 - Geographic metadata, MSL copy number (coverage-based).
 
@@ -168,7 +168,7 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 
 ## Data Sources
 
-Genomic data: 671 *L. infantum* isolates from global sampling (Jeffares lab, University of York, unpublished).
+Genomic data: 465 *L. infantum* isolates from global sampling (Jeffares lab, University of York, unpublished).
 
 ---
 
