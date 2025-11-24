@@ -117,7 +117,7 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 
 **Phylogenetics:**
 - IQ-TREE2 maximum likelihood phylogenies with 1000 ultrafast bootstrap replicates.
-- Model selection via ModelFinder, phylogenies visualized with ggtree (R).
+- Model selection via ModelFinder, phylogenies visualised with ggtree (R).
 - ggtree (R) for visualisation with geographic/ploidy annotation.
 
 **Data:**
