@@ -148,7 +148,7 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 ├── figures/
 │   ├── admixture/             # ADMIXTURE plots (all datasets)
 │   └── phylogenetics/         # Phylogenetic tree figures (all scales)
-└── readme_images/             # Optimized figures for README display
+└── readme_images/             # Optimised figures for README display
 ```
 
 ---
