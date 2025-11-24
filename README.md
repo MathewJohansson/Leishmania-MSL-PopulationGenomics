@@ -116,8 +116,8 @@ MSL deletions confer resistance to **miltefosine**, the only oral treatment for 
 - High-confidence assignments: ≥90% ancestry threshold.
 
 **Phylogenetics:**
-- IQ-TREE2 maximum likelihood with 1000 ultrafast bootstrap replicates.
-- GTR+F+ASC model (ascertainment bias correction for SNP data).
+- IQ-TREE2 maximum likelihood phylogenies with 1000 ultrafast bootstrap replicates.
+- Model selection via ModelFinder, phylogenies visualized with ggtree (R).
 - ggtree (R) for visualisation with geographic/ploidy annotation.
 
 **Data:**
