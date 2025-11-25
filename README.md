@@ -85,7 +85,7 @@ Phylogenies stratified by ploidy level (diploid vs tetraploid strains) and annot
 
 Spatial analysis of MSL copy number variation and population distribution across global sampling locations.
 
-**Status:** Collaborative analysis complete, integration in progress.
+**Status:** Analysis complete, integration in progress.
 
 ---
 
