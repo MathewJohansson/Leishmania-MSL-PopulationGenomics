@@ -197,7 +197,7 @@ GitHub: [@MathewJohansson](https://github.com/MathewJohansson)
 
 ## Acknowledgements
 
-- Dr. Daniel Jeffares (University of York) - Supervision, data generation.
+- [Dr. Daniel Jeffares](https://pure.york.ac.uk/portal/en/persons/daniel-jeffares/) (University of York) - Supervision, data generation.
 - Zeynep Sakaoglu - Geographical and HWE analyses collaboration.
 
 ---
