@@ -33,19 +33,19 @@ Cross-validation error minimisation determined optimal K for each dataset.
 
 ![Cross-Validation Error K=13](readme_images/linfantum_only_cv_error_plot_k1_to_k20_for_k13_only.jpeg)
 
-*Figure 1: Cross-validation error minimisation confirms K=13 as optimal for L. infantum population structure. The lowest CV error at K=13 indicates this number of populations best explains the genetic structure within the species where MSL variation occurs.*
+*Figure 1. Cross-validation error minimisation confirms K=13 as optimal for L. infantum population structure. The lowest CV error at K=13 indicates this number of populations best explains the genetic structure within the species where MSL variation occurs.*
 
 #### Population Assignments (K=13, L. infantum Only)
 
 ![ADMIXTURE K=13 Population Assignments](readme_images/linfantum_only_population_assignments_k13.jpeg)
 
-*Figure 2: ADMIXTURE-inferred population assignments (K=13) showing 13 distinct populations within L. infantum. Brazilian populations dominate the dataset, with clear geographic and genetic structure. This fine-scale resolution reveals cryptic subdivisions relevant to MSL resistance patterns.*
+*Figure 2. ADMIXTURE-inferred population assignments (K=13) showing 13 distinct populations within L. infantum. Brazilian populations dominate the dataset, with clear geographic and genetic structure. This fine-scale resolution reveals cryptic subdivisions relevant to MSL resistance patterns.*
 
 #### Ancestry Proportions (K=13)
 
 ![ADMIXTURE K=13 Ancestry Barplot](readme_images/linfantum_only_stacked_ancestry_barplot_k13.jpeg)
 
-*Figure 3: Stacked ancestry barplot showing admixture proportions for each sample (K=13). Samples are ordered by dominant population assignment. Bar heights represent the proportion of ancestry from each of the 13 populations, revealing admixture patterns and population boundaries.*
+*Figure 3. Stacked ancestry barplot showing admixture proportions for each sample (K=13). Samples are ordered by dominant population assignment. Bar heights represent the proportion of ancestry from each of the 13 populations, revealing admixture patterns and population boundaries.*
 
 ---
 
@@ -65,19 +65,19 @@ Phylogenies stratified by ploidy level (diploid vs tetraploid strains) and annot
 
 ![Whole-Genome Phylogeny](readme_images/whole_genome_phylogeny_circular.jpeg)
 
-*Figure 4: Circular maximum likelihood phylogenetic tree based on whole-genome SNPs (L. infantum only, n=463 samples). Tips are coloured by geographic region and annotated with host species (circles = human, triangles = dog) and MSL copy number (symbol size indicates ploidy). Clear Old World/New World split evident with strong bootstrap support.*
+*Figure 4. Circular maximum likelihood phylogenetic tree based on whole-genome SNPs (L. infantum only, n=463 samples). Tips are coloured by geographic region and annotated with host species (circles = human, triangles = dog) and MSL copy number (symbol size indicates ploidy). Clear Old World/New World split evident with strong bootstrap support.*
 
 #### 100kb Window Around MSL (Regional Selection Signal)
 
 ![100kb Window Phylogeny](readme_images/100kb_window_phylogeny_circular.jpeg)
 
-*Figure 5: Phylogenetic tree based on 100kb genomic window surrounding the MSL locus on chromosome 31. Comparison with whole-genome tree reveals topological differences in New World lineages, suggesting localized selection pressure on the MSL region in American populations where miltefosine resistance is prevalent.*
+*Figure 5. Phylogenetic tree based on 100kb genomic window surrounding the MSL locus on chromosome 31. Comparison with whole-genome tree reveals topological differences in New World lineages, suggesting localized selection pressure on the MSL region in American populations where miltefosine resistance is prevalent.*
 
 #### 20kb Window Around MSL (Fine-Scale Evolution)
 
 ![20kb Window Phylogeny](readme_images/20kb_window_phylogeny_circular.jpeg)
 
-*Figure 6: High-resolution phylogeny from 20kb window directly flanking the MSL genes. Clustering patterns differ from genome-wide phylogeny, with MSL deletions (small symbols indicating low copy number) concentrated in specific Brazilian clades, providing evidence for selection acting on the MSL locus.*
+*Figure 6. High-resolution phylogeny from 20kb window directly flanking the MSL genes. Clustering patterns differ from genome-wide phylogeny, with MSL deletions (small symbols indicating low copy number) concentrated in specific Brazilian clades, providing evidence for selection acting on the MSL locus.*
 
 ---
 
